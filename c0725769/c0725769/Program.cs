@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace c0725769
 {
@@ -15,9 +16,11 @@ namespace c0725769
             Download();
             Console.ReadLine();
         }
-        static void Download() {
-            Thread.Sleep(4000);
-            Console.WriteLine("downloading start");
+        static async void Download() {
+            HttpClient client = new HttpClient();
+            var data = await client.GetStringAsync("http://facebook.com");
+            Console.WriteLine(data);
+           
         }
         class Network
         {
