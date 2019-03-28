@@ -19,5 +19,13 @@ namespace c0725769
             Thread.Sleep(4000);
             Console.WriteLine("downloading start");
         }
+        class Network
+        {
+
+            static public Task Download() {
+
+                return Task.Run( ()=> Thread.Sleep(3000));
+            }
+        }
     }
 }
